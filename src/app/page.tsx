@@ -108,20 +108,8 @@ const SafeAllergyLandingPage = () => {
                
                <div className="flex flex-col sm:flex-row items-center gap-4 justify-center md:justify-start animate-fade-in-up animation-delay-300">
                   <DownloadButton />
-                  <button className="flex items-center gap-2 px-6 py-4 rounded-xl font-bold text-slate-600 hover:text-slate-900 hover:bg-white hover:shadow-lg transition-all border border-transparent hover:border-slate-100">
-                    <span className="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center">▶</span>
-                    Watch Demo
-                  </button>
                </div>
 
-               <div className="mt-10 flex items-center justify-center md:justify-start gap-4 text-sm font-medium text-slate-400">
-                  <div className="flex -space-x-2">
-                     {[1,2,3,4].map(i => (
-                       <div key={i} className={`w-8 h-8 rounded-full border-2 border-white bg-slate-200 bg-[url('https://i.pravatar.cc/100?img=${i+10}')] bg-cover`}></div>
-                     ))}
-                  </div>
-                  <p>Trusted by 10,000+ Families</p>
-               </div>
             </div>
 
             {/* Right Visual (3D Mockup) */}
