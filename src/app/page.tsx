@@ -1,6 +1,7 @@
 'use client';
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { 
   ShieldCheck, 
   ScanLine, 
@@ -51,9 +52,7 @@ const SafeAllergyLandingPage = () => {
          <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-2">
-               <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center text-2xl shadow-lg">
-                 🐘
-               </div>
+               <Image src="/logo.svg" alt="SafeAllergy Logo" width={40} height={40} />
                <span className="text-xl font-black tracking-tight text-slate-900">SafeAllergy</span>
             </Link>
 
@@ -62,7 +61,7 @@ const SafeAllergyLandingPage = () => {
                <a href="#features" className="hover:text-blue-600 transition-colors">Features</a>
                <a href="#how-it-works" className="hover:text-blue-600 transition-colors">How it Works</a>
                <a href="#testimonials" className="hover:text-blue-600 transition-colors">Reviews</a>
-               <a href="#contact" className="hover:text-blue-600 transition-colors">Contact</a>
+               <Link href="/contact-us" className="hover:text-blue-600 transition-colors">Contact</Link>
             </div>
 
             {/* CTA Button */}
@@ -82,6 +81,7 @@ const SafeAllergyLandingPage = () => {
                <a href="#features" className="text-lg font-bold text-slate-700" onClick={() => setMobileMenuOpen(false)}>Features</a>
                <a href="#how-it-works" className="text-lg font-bold text-slate-700" onClick={() => setMobileMenuOpen(false)}>How it Works</a>
                <a href="#testimonials" className="text-lg font-bold text-slate-700" onClick={() => setMobileMenuOpen(false)}>Reviews</a>
+               <Link href="/contact-us" className="text-lg font-bold text-slate-700" onClick={() => setMobileMenuOpen(false)}>Contact</Link>
                <DownloadButton />
             </div>
          )}
@@ -118,28 +118,7 @@ const SafeAllergyLandingPage = () => {
                   {/* Phone Frame */}
                   <div className="bg-slate-900 rounded-[3rem] border-[8px] border-slate-800 shadow-2xl overflow-hidden aspect-[9/19] relative">
                      {/* Screen Content Mockup */}
-                     <div className="absolute inset-0 bg-white flex flex-col">
-                        {/* Fake App Header */}
-                        <div className="h-24 bg-blue-600 rounded-b-3xl relative">
-                           <div className="absolute bottom-[-20px] left-1/2 -translate-x-1/2 w-16 h-16 bg-white rounded-2xl shadow-lg flex items-center justify-center text-3xl border-4 border-white">🐘</div>
-                        </div>
-                        {/* Fake Scan Result */}
-                        <div className="p-6 mt-8 text-center space-y-4">
-                           <div className="w-20 h-20 bg-emerald-100 rounded-full mx-auto flex items-center justify-center text-emerald-600 mb-2">
-                              <ShieldCheck className="w-10 h-10" />
-                           </div>
-                           <h3 className="font-bold text-xl text-slate-800">Safe to Consume</h3>
-                           <p className="text-xs text-slate-400">No allergens found for your profile.</p>
-                           <div className="space-y-2 mt-4">
-                              <div className="h-10 w-full bg-slate-50 rounded-xl"></div>
-                              <div className="h-10 w-full bg-slate-50 rounded-xl"></div>
-                           </div>
-                        </div>
-                        {/* Floating Scan Button */}
-                        <div className="mt-auto m-6 h-14 bg-slate-900 rounded-full flex items-center justify-center text-white shadow-xl">
-                           <ScanLine className="w-6 h-6 animate-pulse" />
-                        </div>
-                     </div>
+                     <Image src="/mockup.png" alt="SafeAllergy App Screenshot" layout="fill" objectFit="cover" />
                   </div>
                </div>
                
@@ -370,7 +349,7 @@ const SafeAllergyLandingPage = () => {
                  Join thousands of users who trust SafeAllergy for their daily safety. Download now and get your first 5 scans free.
                </p>
                <DownloadButton large />
-               <p className="text-xs text-blue-200/60 mt-6 uppercase tracking-widest font-bold">Available on Android & iOS</p>
+               <p className="text-xs text-blue-200/60 mt-6 uppercase tracking-widest font-bold">Available on Android</p>
             </div>
          </div>
       </section>
@@ -382,7 +361,7 @@ const SafeAllergyLandingPage = () => {
             {/* Brand */}
             <div className="col-span-2">
                <div className="flex items-center gap-2 mb-4 text-white">
-                  <span className="text-2xl">🐘</span>
+                  <Image src="/logo.svg" alt="SafeAllergy Logo" width={24} height={24} />
                   <span className="text-xl font-bold">SafeAllergy</span>
                </div>
                <p className="text-sm leading-relaxed max-w-xs mb-6">
@@ -416,7 +395,7 @@ const SafeAllergyLandingPage = () => {
             </div>
          </div>
          <div className="max-w-7xl mx-auto px-6 mt-12 pt-8 border-t border-slate-800 text-center text-xs">
-            © 2024 SafeAllergy Inc. All rights reserved.
+            © 2025 SafeAllergy Inc. All rights reserved.
          </div>
       </footer>
 
@@ -528,3 +507,5 @@ const SparkleIcon = () => (
 );
 
 export default SafeAllergyLandingPage;
+
+    
