@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   title: "SafeAllergy - Your AI Guardian for Food Safety",
   description: "Scan ingredients, menus, and cosmetics to instantly detect hidden allergens.",
   icons: {
-    icon: "/favicon.ico",
+    icon: "/favicon.ico?v=2",
   },
 };
 
@@ -24,9 +24,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
-      <head>
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-      </head>
       <body
         className={cn(
           "min-h-screen bg-background font-sans antialiased",
