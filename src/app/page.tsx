@@ -390,12 +390,12 @@ const SafeAllergyLandingPage = () => {
                <ul className="space-y-2 text-sm">
                   <li><Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link></li>
                   <li><Link href="/terms-of-use" className="hover:text-white transition-colors">Terms of Service</Link></li>
-                  <li><a href="#" className="hover:text-white transition-colors">Disclaimer</a></li>
+                  <li><Link href="/disclaimer" className="hover:text-white transition-colors">Disclaimer</Link></li>
                </ul>
             </div>
          </div>
          <div className="max-w-7xl mx-auto px-6 mt-12 pt-8 border-t border-slate-800 text-center text-xs">
-            © 2025 SafeAllergy Inc. All rights reserved.
+            © 2025 SafeAllergy app. All rights reserved.
          </div>
       </footer>
 
@@ -507,5 +507,3 @@ const SparkleIcon = () => (
 );
 
 export default SafeAllergyLandingPage;
-
-    
