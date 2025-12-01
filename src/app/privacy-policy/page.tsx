@@ -138,7 +138,7 @@ export default function PrivacyPolicy() {
                 <li><strong>Right to Data Portability:</strong> Request transfer of your data to another service.</li>
             </ul>
             <p className="text-sm text-slate-500 mt-4 bg-slate-50 p-4 rounded-xl">
-                To exercise these rights, please contact our Data Protection Officer at <strong>privacy@safeallergy.com</strong>. We will respond within 30 days.
+                To exercise these rights, please contact our Data Protection Officer at <strong>support@safeallergy.app</strong>. We will respond within 30 days.
             </p>
           </section>
 
@@ -164,8 +164,7 @@ export default function PrivacyPolicy() {
               If you have any questions about this Privacy Policy, please contact us.
             </p>
             <div className="flex flex-col md:flex-row justify-center gap-4 text-sm font-medium">
-                <span className="bg-white/10 px-4 py-2 rounded-lg">📧 privacy@safeallergy.com</span>
-                <span className="bg-white/10 px-4 py-2 rounded-lg">📍 123 Tech Park, San Francisco, CA</span>
+                <span className="bg-white/10 px-4 py-2 rounded-lg">📧 support@safeallergy.app</span>
             </div>
           </section>
 

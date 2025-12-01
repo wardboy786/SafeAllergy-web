@@ -122,7 +122,7 @@ export default function TermsOfUse() {
         {/* Footer Contact */}
         <div className="text-center text-slate-400 text-sm">
            <p>SafeAllergy Inc. • 123 Tech Park, San Francisco, CA</p>
-           <p>Contact Legal: legal@safeallergy.com</p>
+           <p>Contact Legal: support@safeallergy.app</p>
         </div>
 
       </div>

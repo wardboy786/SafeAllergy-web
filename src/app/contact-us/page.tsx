@@ -1,12 +1,11 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Mail, Send, Copy, ArrowRight, Shield, CheckCircle2 } from 'lucide-react';
-import { useState } from 'react';
 
 export default function ContactUs() {
   const [copied, setCopied] = useState(false);
-  const email = "ecoliwears@gmail.com";
+  const email = "support@safeallergy.app";
 
   const handleCopy = () => {
     navigator.clipboard.writeText(email);
