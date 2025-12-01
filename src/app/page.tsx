@@ -413,8 +413,6 @@ const SafeAllergyLandingPage = () => {
                <h4 className="text-white font-bold mb-4">Company</h4>
                <ul className="space-y-2 text-sm">
                   <li><Link href="/about-us" className="hover:text-white transition-colors">About Us</Link></li>
-                  <li><a href="#" className="hover:text-white transition-colors">Careers</a></li>
-                  <li><a href="#" className="hover:text-white transition-colors">Blog</a></li>
                   <li><Link href="/contact-us" className="hover:text-white transition-colors">Contact</Link></li>
                </ul>
             </div>
@@ -542,5 +540,3 @@ const SparkleIcon = () => (
 );
 
 export default SafeAllergyLandingPage;
-
-    
