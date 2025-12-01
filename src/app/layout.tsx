@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   title: "SafeAllergy - Your AI Guardian for Food Safety",
   description: "Scan ingredients, menus, and cosmetics to instantly detect hidden allergens.",
   icons: {
-    icon: "/favicon.ico?v=2",
+    icon: "/favicon.ico",
   },
 };
 
