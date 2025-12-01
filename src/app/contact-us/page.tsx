@@ -1,90 +1,99 @@
 'use client';
 
 import React from 'react';
-import { Mail, MapPin, Phone, MessageSquare, Send } from 'lucide-react';
+import { Mail, Send, Copy, ArrowRight, Shield, CheckCircle2 } from 'lucide-react';
+import { useState } from 'react';
 
 export default function ContactUs() {
+  const [copied, setCopied] = useState(false);
+  const email = "ecoliwears@gmail.com";
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText(email);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
   return (
-    <div className="min-h-screen bg-slate-50 pt-24 pb-20 font-sans text-slate-800">
+    <div className="min-h-screen bg-slate-50 pt-24 pb-20 font-sans text-slate-800 flex flex-col justify-center relative overflow-hidden">
       
-      <div className="max-w-6xl mx-auto px-6">
+      {/* Background Ambience */}
+      <div className="absolute inset-0 pointer-events-none">
+         <div className="absolute top-[-10%] right-[-10%] w-[600px] h-[600px] bg-blue-500/5 rounded-full blur-[100px]"></div>
+         <div className="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] bg-purple-500/5 rounded-full blur-[100px]"></div>
+         <div className="absolute inset-0 opacity-[0.03] bg-[url('https://grainy-gradients.vercel.app/noise.svg')]"></div>
+      </div>
+
+      <div className="max-w-2xl mx-auto px-6 w-full relative z-10">
         
-        <div className="text-center mb-16">
-           <h1 className="text-4xl md:text-5xl font-black text-slate-900 mb-4">Get in touch</h1>
-           <p className="text-slate-500 text-lg">We'd love to hear from you. Our team is here to help.</p>
+        <div className="text-center mb-12">
+           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-200/50 text-slate-600 text-xs font-bold uppercase tracking-wider mb-6">
+              <Shield className="w-3 h-3" /> 24/7 Support
+           </div>
+           <h1 className="text-5xl md:text-6xl font-black text-slate-900 mb-6 tracking-tight">
+             Get in touch.
+           </h1>
+           <p className="text-slate-500 text-lg leading-relaxed max-w-md mx-auto">
+             Whether you have a question about features, trials, pricing, or just want to say hello, our team is ready to answer all your questions.
+           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 md:gap-16">
+        {/* PREMIUM EMAIL CARD */}
+        <div className="relative group">
            
-           {/* Contact Info */}
-           <div className="space-y-8">
+           {/* Glow Effect behind card */}
+           <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500 rounded-[2.5rem] blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
+           
+           <div className="relative bg-white p-10 md:p-14 rounded-[2.5rem] shadow-2xl flex flex-col items-center text-center overflow-hidden">
               
-              <div className="bg-white p-8 rounded-[2rem] shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
-                 <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600 mb-4">
-                    <MessageSquare className="w-6 h-6" />
+              {/* Decorative Background inside card */}
+              <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-blue-500 to-purple-500"></div>
+              <div className="absolute -bottom-20 -right-20 w-64 h-64 bg-slate-50 rounded-full z-0"></div>
+
+              <div className="relative z-10">
+                 <div className="w-24 h-24 bg-blue-50 rounded-3xl flex items-center justify-center text-blue-600 mb-8 mx-auto shadow-sm group-hover:scale-110 transition-transform duration-500">
+                    <Mail className="w-10 h-10" />
                  </div>
-                 <h3 className="text-xl font-bold mb-2">Chat with Support</h3>
-                 <p className="text-slate-500 mb-4">Speak to our team via live chat.</p>
-                 <a href="#" className="font-bold text-blue-600 hover:underline">Start a live chat &rarr;</a>
-              </div>
-
-              <div className="bg-white p-8 rounded-[2rem] shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
-                 <div className="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center text-emerald-600 mb-4">
-                    <Mail className="w-6 h-6" />
-                 </div>
-                 <h3 className="text-xl font-bold mb-2">Email Us</h3>
-                 <p className="text-slate-500 mb-4">For general inquiries and partnership.</p>
-                 <a href="mailto:hello@safeallergy.com" className="font-bold text-emerald-600 hover:underline">hello@safeallergy.com</a>
-              </div>
-
-              <div className="bg-white p-8 rounded-[2rem] shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
-                 <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center text-purple-600 mb-4">
-                    <MapPin className="w-6 h-6" />
-                 </div>
-                 <h3 className="text-xl font-bold mb-2">Office</h3>
-                 <p className="text-slate-500">
-                   123 Innovation Drive<br/>
-                   Tech Park, Suite 400<br/>
-                   San Francisco, CA 94103
-                 </p>
-              </div>
-
-           </div>
-
-           {/* Contact Form */}
-           <div className="bg-white p-8 md:p-10 rounded-[2.5rem] shadow-xl border border-slate-100 h-fit">
-              <h3 className="text-2xl font-bold mb-6">Send us a message</h3>
-              <form className="space-y-6">
                  
-                 <div className="grid md:grid-cols-2 gap-6">
-                    <div className="space-y-2">
-                       <label className="text-sm font-bold text-slate-700 ml-1">First Name</label>
-                       <input type="text" placeholder="Jane" className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all" />
-                    </div>
-                    <div className="space-y-2">
-                       <label className="text-sm font-bold text-slate-700 ml-1">Last Name</label>
-                       <input type="text" placeholder="Doe" className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all" />
-                    </div>
+                 <h3 className="text-2xl font-bold text-slate-900 mb-2">Direct Email Support</h3>
+                 <p className="text-slate-500 mb-10 max-w-xs mx-auto">
+                   Drop us a line directly. We typically respond within 2-4 hours.
+                 </p>
+
+                 {/* The Email Action Area */}
+                 <div className="flex flex-col gap-4 w-full max-w-sm mx-auto">
+                    
+                    {/* Primary Button: Mailto */}
+                    <a 
+                      href={`mailto:${email}`} 
+                      className="flex items-center justify-center gap-3 bg-slate-900 text-white px-8 py-4 rounded-2xl font-bold text-lg hover:bg-blue-600 transition-all shadow-xl shadow-slate-900/20 active:scale-[0.98] group/btn"
+                    >
+                      <span>Send Email</span>
+                      <ArrowRight className="w-5 h-5 group-hover/btn:translate-x-1 transition-transform" />
+                    </a>
+
+                    {/* Secondary Button: Copy */}
+                    <button 
+                      onClick={handleCopy}
+                      className="flex items-center justify-center gap-2 px-6 py-3 rounded-2xl text-sm font-bold text-slate-500 hover:bg-slate-50 hover:text-slate-800 transition-colors border border-transparent hover:border-slate-200"
+                    >
+                       {copied ? (
+                         <>
+                           <CheckCircle2 className="w-4 h-4 text-green-500" />
+                           <span className="text-green-600">Copied to clipboard</span>
+                         </>
+                       ) : (
+                         <>
+                           <Copy className="w-4 h-4" />
+                           <span>{email}</span>
+                         </>
+                       )}
+                    </button>
                  </div>
-
-                 <div className="space-y-2">
-                    <label className="text-sm font-bold text-slate-700 ml-1">Email</label>
-                    <input type="email" placeholder="jane@example.com" className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all" />
-                 </div>
-
-                 <div className="space-y-2">
-                    <label className="text-sm font-bold text-slate-700 ml-1">Message</label>
-                    <textarea rows="4" placeholder="How can we help you?" className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all"></textarea>
-                 </div>
-
-                 <button type="button" className="w-full bg-slate-900 text-white font-bold py-4 rounded-xl hover:bg-slate-800 transition-all flex items-center justify-center gap-2 shadow-lg shadow-slate-900/20">
-                    Send Message <Send className="w-4 h-4" />
-                 </button>
-
-              </form>
+              </div>
            </div>
-
         </div>
+
       </div>
     </div>
   );
