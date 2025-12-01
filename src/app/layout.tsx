@@ -12,6 +12,9 @@ const fontSans = FontSans({
 export const metadata: Metadata = {
   title: "SafeAllergy - Your AI Guardian for Food Safety",
   description: "Scan ingredients, menus, and cosmetics to instantly detect hidden allergens.",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
@@ -33,5 +36,3 @@ export default function RootLayout({
     </html>
   );
 }
-
-    
