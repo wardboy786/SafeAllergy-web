@@ -3,7 +3,7 @@
 import React from 'react';
 import { 
   Heart, Users, ShieldCheck, Sparkles, Brain, Globe, 
-  Microscope, Award, CheckCircle2, Zap 
+  Microscope, Award, Zap, CheckCircle2 
 } from 'lucide-react';
 
 export default function AboutUs() {
