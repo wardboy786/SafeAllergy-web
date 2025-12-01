@@ -2,10 +2,16 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { Toaster } from "@/components/ui/toaster";
+import { Inter as FontSans } from "next/font/google"
+ 
+const fontSans = FontSans({
+  subsets: ["latin"],
+  variable: "--font-sans",
+})
 
 export const metadata: Metadata = {
-  title: "AllergyScan Pro - Your Guide to Safe Eating",
-  description: "Scan any item, detect allergens with AI, and eat with confidence. Your personal allergy assistant.",
+  title: "SafeAllergy - Your AI Guardian for Food Safety",
+  description: "Scan ingredients, menus, and cosmetics to instantly detect hidden allergens.",
 };
 
 export default function RootLayout({
@@ -14,15 +20,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" rel="stylesheet" />
-      </head>
+    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <body
         className={cn(
-          "min-h-screen bg-background font-body antialiased",
+          "min-h-screen bg-background font-sans antialiased",
+          fontSans.variable
         )}
       >
         {children}
@@ -31,3 +33,5 @@ export default function RootLayout({
     </html>
   );
 }
+
+    
